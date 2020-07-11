@@ -1,22 +1,11 @@
-<h1>Listing All Notes</h1>
+<h1 class="text-center mt-4">Listing All Notes</h1>
 
-<p>
-	<%= link_to("Create New Note", new_note_path) %>
-</p>
+<div class="flickr_pagination">
+  <%= will_paginate @notes %>
+</div>
 
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Body</th>
-	</tr>
+<%= render 'note', obj: @notes %>
 
-	<% @notes.each do |note| %>
-		<tr>
-			<td><%= note.title %></td>
-			<td><%= note.body %></td>
-			<td><%= link_to 'Edit', edit_note_path(note) %></td>
-			<td><%= link_to 'Show', note_path(note) %></td>
-			<td><%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: "Are you sure you want to delete this note?" } %></td>
-		</tr>
-	<% end %>
-</table>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @notes, :container => false %>
+</div> 

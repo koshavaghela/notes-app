@@ -1,9 +1,10 @@
 class Note < ActiveRecord::Base
-	
 	validates :title, length: { maximum: 30 }
 	validates :body, presence: true, length: { maximum: 1000 }
 
 	before_validation :title_and_body
+
+	belongs_to :user
 
 	private
 

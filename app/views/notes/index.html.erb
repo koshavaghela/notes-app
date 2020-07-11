@@ -1,0 +1,22 @@
+<h1>Listing All Notes</h1>
+
+<p>
+	<%= link_to("Create New Note", new_note_path) %>
+</p>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Body</th>
+	</tr>
+
+	<% @notes.each do |note| %>
+		<tr>
+			<td><%= note.title %></td>
+			<td><%= note.body %></td>
+			<td><%= link_to 'Edit', edit_note_path(note) %></td>
+			<td><%= link_to 'Show', note_path(note) %></td>
+			<td><%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: "Are you sure you want to delete this note?" } %></td>
+		</tr>
+	<% end %>
+</table>

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_12_180434) do
+ActiveRecord::Schema.define(version: 2020_07_12_213040) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "note_categories", force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "category_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.string "title"

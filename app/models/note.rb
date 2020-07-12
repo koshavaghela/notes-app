@@ -5,6 +5,8 @@ class Note < ActiveRecord::Base
 	before_validation :title_and_body
 
 	belongs_to :user
+	has_many :note_categories
+	has_many :categories, through: :note_categories
 
 	private
 

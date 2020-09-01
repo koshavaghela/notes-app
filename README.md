@@ -1,5 +1,3 @@
-# Sharpspring / Perfect Audience Ruby on Rails Coding Challenge!
-
 ## This is a Notes App with a simple sign in page that allows an email and password to be submitted for verification.
 
 ## Features 
